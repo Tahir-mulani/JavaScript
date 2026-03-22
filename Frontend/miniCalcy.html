@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     input{
+      width:400px;
+      height:40px;
+      border-radius: 5px;
+     }
+  </style>
+  <script type="text/javascript">
+      let quantity,rate,total;
+      function acceptFirstVal(){
+        quantity=document.getElementById("qty").value;
+  
+      }
+      function acceptSecondVal(){
+            rate=document.getElementById("rate").value;
+        total=parseInt(quantity)*parseInt(rate);
+        
+        let resultTextbox=document.getElementById("total");
+        resultTextbox.value=""+total;
+      }
+  </script>
+</head>
+<body>
+<input type="text" id="qty" value="" onkeyup="acceptFirstVal()"/> <br/><br/>
+<input type="text" id="rate" value="" onkeyup="acceptSecondVal()" /> <br/><br/>
+<input type="text" id="total" value="" /> <br/><br/>
+
+</body>
+</html>
+<!-- Or
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     input{
+      width:400px;
+      height:40px;
+      border-radius: 5px;
+     }
+  </style>
+  <script type="text/javascript">
+      let quantity,rate,total;
+      function acceptFirstVal(qty){
+         quantity=qty;
+      }
+      function acceptSecondVal(r){
+          rate=r;  
+		  total=quantity*rate;
+        let resultTextbox=document.getElementById("total");
+        resultTextbox.value=""+total;
+      }
+  </script>
+</head>
+<body>
+<input type="text" id="qty" value="" onkeyup="acceptFirstVal(this.value)"/> <br/><br/>
+<input type="text" id="rate" value="" onkeyup="acceptSecondVal(this.value)" /> <br/><br/>
+<input type="text" id="total" value="" /> <br/><br/>
+
+</body>
+</html> -->
+
