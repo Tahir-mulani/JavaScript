@@ -1,0 +1,33 @@
+<!-- 6. Count Button Clicks
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Button Clicks</title>
+</head>
+
+<body>
+    <div id="heading">
+
+    </div>
+    <button onclick="increse()">Click to increse Count</button>
+
+    <script>
+        let head = document.getElementById("heading");
+
+        let result = document.createElement("h1");
+        let count = 0;
+        function increse(n) {
+            count++;
+
+            result.innerHTML = count;
+            head.appendChild(result);
+            result.style.display = "inline-block"
+        }
+    </script>
+</body>
+
+</html>

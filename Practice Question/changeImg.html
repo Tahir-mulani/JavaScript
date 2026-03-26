@@ -1,0 +1,60 @@
+<!-- 5. Change Image on Click 
+Description: Switch image when clicked.
+Practice: src
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image</title>
+    <style>
+        .container {
+            border: 1px solid #000;
+            margin: auto;
+            
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        #btnChange {
+            padding: 5px;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #imgLeetcode{
+           
+            border: 2px solid #dc1e1e;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="img">
+            <img src="/assets/LeetCode_Sharing.png" id="imgLeetcode" alt="" height="50%" width="100%">
+            <button id="btnChange" onclick="Change()">Change Image</button>
+        </div>
+
+    </div>
+
+    <script>
+        function Change() {
+            let getImg = document.getElementById("imgLeetcode")
+            getImg.setAttribute("src", "/assets/github.jpg");
+            getImg.style.height = "50%";
+            getImg.style.width = "100%";
+           
+        }
+    </script>
+</body>
+
+</html>
