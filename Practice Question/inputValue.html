@@ -1,0 +1,66 @@
+ <!-- 4. Input Value Display
+Description: Show input text in a paragraph.
+Practice: value -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input Value</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100px;
+            margin: auto;
+            width: 50%;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+        #txtBox{
+            height: 50px;
+
+        }
+        #btnClear{
+            padding: 10px 20px;
+        } 
+        #btnAddText{
+            padding: 10px 20px;
+        }
+        #paragraph{
+            border: 1px solid #000;
+            height: 80px;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="container">
+        <input type="text" id="txtBox" value="">
+        <input type="button" value="Clear Text" id="btnClear" onclick="clerText()">
+        <input type="button" value="Add Text" id="btnAddText" onclick="show()">
+        <p id="paragraph"></p>
+
+    </div>
+
+    <!-- js code -->
+     <script>
+        
+        function clerText(){
+            let getValue = document.getElementById("txtBox");
+            getValue.value= "";
+
+        }
+        function show(){
+             let showValue = document.getElementById("txtBox");
+             let paraValue = document.getElementById("paragraph");
+             paraValue.innerHTML = showValue.value;
+        }
+
+     </script>
+ </body>
+ </html>

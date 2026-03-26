@@ -1,0 +1,49 @@
+<!-- 3. Show/Hide Element
+Description: Toggle visibility of a div.
+Practice: style.display -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Element</title>
+    <script type="text/javascript">
+        function toggleMenu(){
+             let menu = document.getElementById("mydiv");
+             if(menu.style.display == "none"  || menu.style.display == ""){
+                menu.style.display = "block";
+             }
+             else{
+                menu.style.display = "none";
+             }
+        }
+    </script>
+    <style>
+         #mydiv{
+            width: 120px;
+            height: 70px;
+            background-color: lightblue;
+            margin-top: 5px;
+   
+         }
+         .menu_item{
+            list-style: none;
+             
+         }
+         .menu_item li a{
+            text-decoration: none;
+         }
+    </style>
+</head>
+<body>
+    <button onclick="toggleMenu()" style="cursor: pointer;">Show / hide</button>
+     <div id="mydiv" style="display: none;">
+        <ul class="menu_item">
+         <li><a href="">Home</a></li>
+         <li><a href="">About Us</a></li>
+         <li><a href="">Services</a></li>
+        </ul>
+     </div>
+</body>
+</html>

@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        
+        function show() {
+            let headingTag = document.getElementById("heading");
+            let str = headingTag.innerHTML;
+            alert(str);
+        }
     </script>
 </head>
+
 <body>
-    <input type="text" name="" id="name"  value="">
+    <h1 id="heading">Welcome to javascript</h1>
+    <button id="name"
+        style="color: black; font-weight: bold; cursor: pointer; background-color: lightblue; border:none; width: 150px; height:50px;" onclick="show()">click to Get Heading Notification</button>
 </body>
+
 </html>
