@@ -1,0 +1,74 @@
+<!-- 7. Add List Item 
+Description: Add items dynamically to a list. 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add List Items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: auto;
+            border: 1px solid #000;
+            min-height: 100px;
+            padding: 5px;
+            width: 80%;           
+            
+        }
+        #additems{
+        width: 80px;
+        padding: 5px;
+        height: 30px;
+        background-color: azure;
+        border:2px solid black;
+        border-radius: 3px;
+        cursor: pointer;
+        }
+         #listitems{
+            gap: 5px;
+            display: block;
+             margin-left:10px ;
+         }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add List Items</h1>
+        <input type="text" id="items" placeholder="Enter list items" value="">
+        <button id="additems" onclick="addlist()">
+            Add
+        </button>
+        <h3>List Items</h3>
+        <ul id="listitems">
+
+        </ul>
+    </div>
+    <script>
+        
+        function addlist(){
+            let input = document.getElementById("items");
+            let value = input.value;
+
+            if(value == ""){
+                alert("Please Enter Somethings");
+                return;
+            }
+            let li = document.createElement("li");
+            li.innerHTML=value;
+            document.getElementById("listitems").appendChild(li);
+            input.value = "";
+             
+        }
+    </script>
+</body>
+
+</html>

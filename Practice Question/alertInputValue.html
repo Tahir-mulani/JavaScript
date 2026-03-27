@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Input Value</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Enter Text" id="txtBox" autocomplete="off">
+        <button id="btnAlert" onclick="btnAlert()">Click Here</button> 
+    </div>
+    <script>
+        function btnAlert(){
+            let a = document.getElementById("txtBox");
+            let val = a.value;
+            alert(val);
+            
+        }   
+    </script>
+</body>
+</html>

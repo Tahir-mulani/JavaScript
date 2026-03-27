@@ -1,0 +1,31 @@
+<!-- 12. Live Character Counter
+ Description: Show characters typed in textarea.
+ Description: Show popup on button click.
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Charater Counter</title>
+ </head>
+ <body>
+    <div>
+        <input type="text-area"  id="txtCharacter" onkeyup="show()" >
+        <p id="result">
+            character count : 0
+        </p>
+         
+    </div>
+
+    <script>
+        function show(){
+            let text = document.getElementById("txtCharacter").value;
+            let len = text.length;
+            document.getElementById("result").innerHTML = "character count :"+ len;
+            
+        }
+        
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,51 @@
+<!-- 8. Remove Element 
+Description: Remove a paragraph on button click
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Element</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 80%;
+            background-color: rgb(51, 112, 165);
+            border: 1px solid #000;
+            min-height: 100px;
+        }
+        #btnRemove{
+            padding: 5px;
+            margin: 10px 20px;
+            border-radius: 3px;
+            border: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        #paragraph{
+            border: 1px solid #000;
+            margin: 10px 20px;
+            padding: 5px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="btnRemove" onclick="Remove()">
+            Click To Remove
+        </button>
+        <p id="paragraph">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto aliquam dicta in. Nulla velit dolores fuga modi, possimus dignissimos omnis!
+        </p>
+    </div>
+    <script>
+        function Remove(){
+          let a =document.getElementById("paragraph");
+          a.style.display = "none";
+        }
+    </script>
+</body>
+</html>
