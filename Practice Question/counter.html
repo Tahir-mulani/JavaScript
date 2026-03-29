@@ -7,26 +7,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Count Button Clicks</title>
+    <style>
+        #btnincrease{
+            background-color: green;
+            cursor: pointer;
+        }
+        #btndecrese{
+            background-color: orange;
+            cursor: pointer;
+        }
+        #btnreset{
+            background-color: red;
+            cursor: pointer;
+        }
+        
+    </style>
 </head>
 
 <body>
-    <div id="heading">
-
-    </div>
-    <button onclick="increse()">Click to increse Count</button>
-
+    <h1 id="count">0</h1>
+    <button onclick="increse()" id="btnincrease">Increase</button>
+    <button onclick="reset()" id="btnreset">Reset</button>
+    <button onclick="decrease()" id="btndecrese">Decrease</button>
     <script>
-        let head = document.getElementById("heading");
-
-        let result = document.createElement("h1");
+        
         let count = 0;
-        function increse(n) {
+        function increse() {
             count++;
-
-            result.innerHTML = count;
-            head.appendChild(result);
-            result.style.display = "inline-block"
+            document.getElementById("count").textContent = count;
+            
         }
+        function decrease(){
+            count--;
+            document.getElementById("count").textContent = count;
+        }
+        function reset(){
+                count= 0;
+                document.getElementById("count").textContent = count;
+            }
     </script>
 </body>
 

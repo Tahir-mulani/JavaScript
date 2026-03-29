@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Validation</title>
+    <style>
+        .container {
+            border: 1px solid #000;
+            padding: 10px 20px;
+            width: 50%;
+        }
+
+        #mob {
+            padding: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px gray;
+            margin-right: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mobile Number Validation</h1>
+        <input type="text" id="mob" placeholder="Enter Mobile Number" autocomplete="off">
+
+        <span id="msg"></span>
+
+    </div>
+
+    <script>
+
+        let input = document.getElementById("mob");
+        let span = document.getElementById("msg");
+
+
+        input.addEventListener("keyup", function () {
+            let str = input.value;
+
+            //Empty check
+            if (str.length == 0) {
+                span.innerHTML = "! Field is Required Should not empty";
+                span.style.color = "red";
+                return;
+            }
+            //only numbers
+            if (isNaN(str)) {
+                span.innerHTML = "!Only Numbers Allowed";
+                span.style.color = "red";
+            } 
+            //starting digit check
+            else if (str.charAt(0) >= '1' && str.charAt(0) <= '5') {
+                span.innerHTML = "Invalid Number";
+                span.style.color = "red";
+
+            }
+            //length check
+            else if (str.length != 10) {
+                span.innerHTML = "!Number Must be 10 Digits";
+                span.style.color = "red";
+            }
+            else {
+                span.innerHTML = "✔️Valid Number";
+                span.style.color = "green";
+                alert("Mobile Number is valid");
+                input.disabled = true;
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

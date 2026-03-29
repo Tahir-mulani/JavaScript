@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Validation</title>
+    <style>
+        .container {
+            border: 1px solid #000;
+            padding: 10px 20px;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Aadhar Card Validation</h1>
+        <input type="text" id="Aadhar" autocomplete="off" onkeyup="validateAadhar(this.value)" value="">
+        <button id="btnsubmit" onclick="submit()">Submit</button>
+        <span id="msg"></span>
+
+    </div>
+
+
+    <!-- js code -->
+    <script>
+        function validateAadhar() {
+            let str = document.getElementById("Aadhar").value;
+            let flag = true;
+            let span = document.getElementById("msg");
+
+            if (str.charAt(0) == '0' || str.charAt(0) == '1') {
+                span.innerHTML = "Invalid Aadhar";
+                span.style.color = "red";
+            }
+
+            else {
+                for (let i = 0; i < str.length; i++) {
+                    if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+                        if (str.length != 12) {
+                            span.innerHTML = "Aadhar Must be 12 Digits";
+                            span.style.color = "red";
+                            break;
+                        }
+                        span.innerHTML = "Valid Aadhar";
+                        span.style.color = "green";
+                    }
+                    else {
+                        span.innerHTML = "Only Numbers Allowed";
+                        span.style.color = "red";
+                        break;
+                    }
+
+                }
+            }
+            return span.innerHTML;
+
+
+
+
+        }
+        function submit() {
+
+            alert(validateAadhar());
+
+        }
+    </script>
+</body>
+
+</html>

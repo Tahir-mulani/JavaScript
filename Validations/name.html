@@ -1,0 +1,38 @@
+<html>
+<head>
+ <title> name validation</title>
+ <script type='text/javascript'>
+    function validateName(str)
+	{   let span=document.getElementById("s");
+	   if(str.length==0)
+	    { span.innerHTML="name should not empty";
+	     span.style.color="red";
+	   }
+	   else
+	   {  let flag=false;
+	      for(let i=0;i<str.length;i++)
+		  { 
+		     let ascii=str.charCodeAt(i);
+			 if( !((ascii>=65 && ascii<=90) ||(ascii>=97&&ascii<=122)))
+			 { flag=true;
+			   break;
+			 }
+		  }
+		  if(flag)
+		  { span.innerHTML="Invalid name";
+		    span.style.color="red";
+		  }
+		  else{
+		  span.innerHTML="";
+		    span.style.color="white";
+		  }
+	   }
+	}
+ </script>
+</head>
+<body>
+<input type='text' name='name' value='' id='n' 
+style="width:400px;height:40px;" onkeyup="validateName(this.value)"/>
+&nbsp;&nbsp;<span id="s"></span>
+</body>
+</html>

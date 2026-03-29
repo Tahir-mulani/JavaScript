@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid #000;
+            margin: auto;
+            min-height: 100px;
+            width: 80%;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        #task{
+            width: 50%;
+            
+        }
+        #btnAdd{
+            background-color: green;
+            color:white;
+            padding: 3px;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+           font-size: 14px;
+        }
+        #list{
+            text-align: left;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do-List</h2>
+        <input type="text" id="task" placeholder="Add Your Text" autocomplete="off"> 
+        <button id="btnAdd" onclick="addtask()">Add Task</button>
+        <ul id="list"></ul>
+    </div>
+    <script>
+        function addtask(){
+            let task = document.getElementById("task");
+            let li = document.createElement("li");
+            li.innerHTML = task.value;
+             li.onclick = function(){
+                li.remove();
+             }
+             document.getElementById("list").appendChild(li);
+        }
+    </script>
+    
+</body>
+</html>
