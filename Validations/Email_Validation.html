@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: auto;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            width: 50%;
+            min-height: 100px;
+            color: black;
+        }
+ 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Email Verification</h1>
+        <input type="text" id="Email" autocomplete="off">
+        <span id="error_msg"></span>
+    </div>
+
+    <!-- JavaScript validation  code -->
+    <script>
+
+        let email = document.getElementById("Email");
+        let msg = document.getElementById("error_msg");
+
+        email.addEventListener("keyup", () => {
+            let str = email.value;
+            if (str.length == 0) {
+                msg.innerHTML = "!Email Can't be empty";
+                msg.style.color = "red";
+            }
+            
+            else if(str.charAt(0) == '@')
+            {
+                msg.innerHTML = "!Invalid Email";
+                msg.style.color = "red";
+            }
+            else {
+                for(let i=0;i<str.length;i++){
+                    if(str.char(i)){
+
+                    }
+                }
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>
