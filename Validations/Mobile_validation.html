@@ -50,7 +50,7 @@
             if (isNaN(str)) {
                 span.innerHTML = "!Only Numbers Allowed";
                 span.style.color = "red";
-            } 
+            }
             //starting digit check
             else if (str.charAt(0) >= '1' && str.charAt(0) <= '5') {
                 span.innerHTML = "Invalid Number";
@@ -63,10 +63,12 @@
                 span.style.color = "red";
             }
             else {
-                span.innerHTML = "✔️Valid Number";
+                span.innerHTML = "Valid Number";
                 span.style.color = "green";
-                alert("Mobile Number is valid");
-                input.disabled = true;
+
+                setTimeout(() => {
+                    window.location.href = "AadharCard.html";
+                },800);
             }
         });
 

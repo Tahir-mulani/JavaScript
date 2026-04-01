@@ -23,7 +23,7 @@
 		    span.style.color="red";
 		  }
 		  else{
-		  span.innerHTML="";
+		  	span.innerHTML="";
 		    span.style.color="white";
 		  }
 	   }
@@ -32,7 +32,7 @@
 </head>
 <body>
 <input type='text' name='name' value='' id='n' 
-style="width:400px;height:40px;" onkeyup="validateName(this.value)"/>
+style="width:400px;height:40px;" onkeyup="validateName(this.value)" autocomplete="off"/>
 &nbsp;&nbsp;<span id="s"></span>
 </body>
 </html>

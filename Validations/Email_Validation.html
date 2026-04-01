@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Email Validation</title>
     <style>
         .container {
             margin: auto;
@@ -14,7 +14,13 @@
             min-height: 100px;
             color: black;
         }
- 
+
+        .container .btnsubmit {
+            background-color: green;
+            padding: 5px;
+            color: white;
+
+        }
     </style>
 </head>
 
@@ -22,37 +28,63 @@
     <div class="container">
         <h1>Email Verification</h1>
         <input type="text" id="Email" autocomplete="off">
+        <button onclick="validateEmail()" id="btnsubmit">Next</button>
         <span id="error_msg"></span>
+
     </div>
 
     <!-- JavaScript validation  code -->
     <script>
 
-        let email = document.getElementById("Email");
+
         let msg = document.getElementById("error_msg");
 
-        email.addEventListener("keyup", () => {
-            let str = email.value;
+        function validateEmail() {
+            let str = document.getElementById("Email").value;
+
+            let atIndex = str.indexOf('@');
+            let dotIndex = str.lastIndexOf('.');
+
             if (str.length == 0) {
                 msg.innerHTML = "!Email Can't be empty";
                 msg.style.color = "red";
+                return;
             }
-            
-            else if(str.charAt(0) == '@')
-            {
+            else if (str.charAt(0) == '@') {
                 msg.innerHTML = "!Invalid Email";
                 msg.style.color = "red";
+                return;
+            }
+            else if (!str.includes('@')) {
+                msg.innerHTML = "!Missing '@' ";
+                msg.style.color = "red";
+                return;
+            }
+            else if (!str.includes('.')) {
+                msg.innerHTML = "!Missing dot  (.) ";
+                msg.style.color = "red";
+                return;
+            }
+
+            if (dotIndex < atIndex) {
+                msg.innerHTML = "! Dot must be after @";
+                msg.style.color = "red";
+            }
+            else if (dotIndex === str.length - 1) {
+                msg.innerHTML = "!dot cannot be last";
+                msg.style.color = "red";
+
             }
             else {
-                for(let i=0;i<str.length;i++){
-                    if(str.char(i)){
-
-                    }
-                }
+                msg.innerHTML = "Valid Email";
+                msg.style.color = "green"; 
             }
-
-        })
+        }
     </script>
+
+
+
+
 
 </body>
 
