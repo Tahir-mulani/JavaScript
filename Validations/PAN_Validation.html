@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN Card Validation</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 10px 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>PAN Card Validation</h1>
+        <input type="text" id="txtPan" autocomplete="off">
+        <button id="btnsubmit" onclick="checkPan()">Submit</button>
+        <span id="erroMsg"></span>
+    </div>
+
+    <!-- JS code -->
+    <script>
+        let error = document.getElementById("erroMsg");
+        function checkPan() {
+            let str = document.getElementById("txtPan").value;
+
+            if (str.length == 0) {
+                error.innerHTML = "!Required Field should not empty"
+                error.style.color = "red";
+                return;
+            }
+            else if (str.length != 10) {
+                error.innerHTML = "!Invalid PAN";
+                error.style.color = "red";
+                return;
+            }
+            else {
+                for (let i = 0; i <= 4; i++) {
+                    if (!(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z')) {
+                        error.innerHTML = "!Invalid PAN";
+                        error.style.color = 'red';
+                        return;
+                    }
+                }
+                for (let i = 5; i <= 8; i++) {
+                    if (!(str.charAt(i) >= '0' && str.charAt(i) <= '9')) {
+                        error.innerHTML = "!Invalid PAN";
+                        error.style.color = "red";
+                        return;
+                    }
+                }
+                if (!(str.charAt(9) >= 'A' && str.charAt(9) <= 'Z')) {
+                    error.innerHTML = "!Invalid PAN";
+                    error.style.color = "red";
+                    return;
+                }
+
+            }
+
+            
+
+        }
+    </script>
+</body>
+
+</html>
