@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    remove Event Listener
+    </title>
+</head>
+<body>
+    <button id="btnAdd">Click me</button>
+    <button id="btnRemove">Ok</button>
+
+    <!-- js code -->
+     <script>
+
+        const btn  = document.getElementById("btnAdd");
+        const removeBtn = document.getElementById("btnRemove");
+        function handelClick(){
+            console.log("button clicked");
+        }
+
+        function removeClick(){
+            btn.removeEventListener("click",handelClick);
+            console.log("Event removed successfully");
+        }
+
+        //add event
+        btn.addEventListener("click",handelClick);
+
+        //remove event
+        removeBtn.addEventListener("click",removeClick);
+     </script>
+</body>
+</html>
