@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem similique in nostrum ipsum voluptatibus, quam commodi unde quos odit omnis.</p>
+    <button onclick="deletParagraph()" id="btnDelete">Click here to delete</button>
+    <span id="text"></span>
+    <!-- js code -->
+     <script>
+        function deletParagraph(){
+            document.getElementById("paragraph").remove();
+            document.getElementById("btnDelete").style.display = "none";
+            document.getElementById("text").innerHTML = "Paragraph deleted successfully";
+
+        }
+     </script>
+</body>
+</html>
