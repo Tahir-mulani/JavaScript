@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validation</title>
+</head>
+
+<body>
+    <input type="text" id="txtname" autocomplete="off" placeholder="Enter Name">
+    <button type="submit" id="btnsubmit">Submit</button>
+    <span id="msg"></span>
+    <!-- js code -->
+    <script>
+
+        document.getElementById("btnsubmit").addEventListener("click", () => {
+
+            let str = document.getElementById("txtname").value.trim();
+            let error = document.getElementById("msg");
+
+            if (str.length === 0 || str.length < 2 || str.length > 30) {
+                error.innerHTML = "Invalid Name..!";
+                error.style.color = "red";
+            } else if (str.charAt(0) >= '1' && str.charAt(0) <= '9') {
+                error.innerHTML = "Should Not Start With Digits..!";
+                error.style.color = "red";
+            }
+            else {
+                for (let i = 0; i < str.length; i++) {
+                    if (str.charAt(i) >= '1' && str.charAt(i) <= '9') {
+                        error.innerHTML = "Numbers Not Allowed..!";
+                        error.style.color = "red";
+                        break;
+                    }
+                    if(str.charAt(i) >= 'A' && str.charAt(i) <= 'z'){
+                        error.innerHTML = "valid Name..!";
+                        error.style.color = "green";
+                    }
+                }
+                
+            }
+        })
+    </script>
+</body>
+
+</html>
