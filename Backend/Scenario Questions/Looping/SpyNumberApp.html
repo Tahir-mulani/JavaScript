@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Que 5 :
+        Write program to check given number is spy number or not using while loop and user defined function.
+        -> A spy number is a number where the sum of its digits equals the product of its digits.
+        For example :
+        1124 is a spy number, because the sum of its digits is 1+1+2+4=8 and the product of its digits is 1*1*2*4=8 is equal
+        case 1:
+        Sample input : 22
+        Sample Output : Is spy number 
+        case 2:
+        Sample input : 1124
+        Sample Output :  Is spy number
+        case 3:
+        Sample input : 123
+        Sample Output :  Is not spy number*/
+        let num = parseInt(prompt("Enter Number"));
+        let sum = 0;
+        let temp = num;
+        let product = 1;
+        while (temp != 0) {
+            let digit = temp % 10;
+            sum += digit;
+            product *= digit;
+            temp = parseInt(temp / 10);
+        }
+        if(sum == product){
+            alert(num+" is Spy Number");
+        }else{
+            alert(num+" is not a Spy Number");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Que 7 :
+Write a program that takes a number as input from the user and determine whether the number is a neon number or not. Develop it by using while loop.
+A Neon number is a number where the sum of digits of square of the number is equal to the number itself.
+9 is a Neon number . Its square is 9*9 = 81 and sum of the digits 8+1 = 9 .So both are equal.*/
+let num = parseInt(prompt("Enter Number"));
+let sq = num*num;
+
+let sum = 0;
+while(sq!= 0){
+let digit = sq %10;
+ sum += digit;
+ temp = parseInt(sq/10);
+}
+if(num == sum){
+    alert(num+" is Neon Number");
+} else{
+    alert(num+" is Not a Neon Number");
+}
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

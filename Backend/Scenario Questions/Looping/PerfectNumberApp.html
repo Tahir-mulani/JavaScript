@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Que 6 :
+        Write a  program to check the given number is a perfect number or not?
+        If a sum of the multiples of the number excluding the given number is same as the original number then we can say that number is a perfect number.
+        6 multiples are 1,2,3,6 : sum of multiples = 1+2+3 = 6
+        6 is a perfect number.
+        input :
+            Enter a number : 28
+        output :
+            28 is a perfect number.
+        */
+        let num = parseInt(prompt("Enter Number"));
+        let i = 1;
+        let sum = 0;
+        while (i <= num/2) {
+            if (num%i == 0) {
+                sum += i;
+            }
+            i++;
+        }
+        if (sum == num) {
+            alert(num + " is Perfect Number");
+        } else {
+            alert(num + " is  not a Perfect Number");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
