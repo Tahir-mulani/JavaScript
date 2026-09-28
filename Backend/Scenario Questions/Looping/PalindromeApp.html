@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Que 2 :
+-------
+Write a C program to check whether a given integer is a palindrome using a while loop. 
+- A number is considered a palindrome if the reverse of the number is equal to the original number 
+-The program should prompt the user to enter an integer, reverse the number, and then compare it to the original number to determine if it is a palindrome.
+
+Sample input  : Enter an integer: 121
+Sample output : 121 is palindrome number.
+
+Sample input  : Enter an integer: 1121 
+Sample output : 1121 is not palindrome number.*/
+let num = parseInt(prompt("Enter Number"));
+
+let temp = num;
+let rev = 0;
+while(temp != 0){
+    let digit = temp %10;
+    rev = rev *10+digit;
+    temp = parseInt(temp/10);
+
+}
+
+if(rev == num){
+    alert(num+" is Palindrome Numer");
+}
+else{
+    alert(num+" is Not Palindrome Number");
+}
+    </script>
+</head>
+<body> 
+</body>
+</html>

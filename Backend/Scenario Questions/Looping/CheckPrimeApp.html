@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  
+  Que 3 :
+  -------
+  Write a  program to read one integer number from user and check it is Prime number or not using a while loop.
+  ->it is a number that is not divisible by any other number except for 1 and itself.
+  
+  Sample input  : Enter an integer: 5
+  Sample output : 5 is prime number.
+  
+  Sample input  : Enter an integer: 6
+  Sample output : 6 is not prime number.*/
+        let num = parseInt(prompt("Enter Number"));
+        let flag = true;
+        let i = 2;
+        if (num <= 1) {
+            flag = false;
+        } else {
+            while (i < num) {
+                if (num % i == 0) {
+                    flag = false;
+                    break;
+                }
+                i++;
+            }
+        }
+        if (flag) {
+            alert(num + " is Prime Number");
+        } else {
+            alert(num + " is Not a Prime Number");
+        }
+    </script>
+</head>
+
+<body>
+</body>
+</html>

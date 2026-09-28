@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+Que 4 :
+-------
+Write a  program that converts a given integer into its corresponding word representation for each digit while loop. 
+The program should take an integer as input and output each digit of the number in words, separated by spaces.
+
+Sample input  : 1256
+Sample output : one two five six*/
+        let num = parseInt(prompt("Enter Integer Number"));
+        let rev = 0;
+        while (num != 0) {
+            let rem = num % 10;
+            rev = rev * 10 + rem;
+            num = parseInt(num / 10);
+        }
+        let words = "";
+        while (rev != 0) {
+            let digit = rev % 10;
+
+            if (digit == 0) {
+                //alert("Zero");
+                words += " Zero";
+            }
+            else if (digit == 1) {
+                //alert("One");
+                words += " One";
+            }
+            else if (digit == 2) {
+                //alert("Two");
+                words += " Two";
+            }
+            else if (digit == 3) {
+                //alert("Three");
+                words += " Three";
+            }
+            else if (digit == 4) {
+                //alert("Four");
+                words += " Four";
+            }
+            else if (digit == 5) {
+                words += "Five";
+            }
+            else if (digit == 6) {
+                words += "Six";
+            } else if (digit == 7) {
+                words += "Seven";
+            }
+            else if (digit == 8) {
+                words += "Eight";
+            }
+            else if (digit == 9) {
+                words += "Nine";
+            }
+            else {
+                break;
+            }
+            rev = parseInt(rev / 10);
+        }
+        alert(words);
+
+    </script>
+</head>
+<body>
+</body>
+
+</html>
