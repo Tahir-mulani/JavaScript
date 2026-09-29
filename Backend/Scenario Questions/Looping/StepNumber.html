@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Que 9 :
+-------
+Write a  program to check if a given integer number is a "step number" or not. 
+A number is considered a step number if the absolute difference between every two consecutive digits is exactly 1.
+
+Examples:
+
+Input: 1234 
+Output: 1234 is a step number.
+
+Input: 54321 
+Output: 54321 is a step number.
+
+Input: 10101 
+Output: 10101 is not a step number.*/
+        let num = parseInt(prompt("Enter number"));
+        let temp = num;
+        let isStep = true;
+        let previousDigit = temp % 10;
+        temp = parseInt(temp / 10);
+
+        while (temp != 0) {
+            let currentDigit = temp % 10;
+            let difference = currentDigit - previousDigit;
+
+            if (difference < 0) {
+                difference = -difference;
+            }
+
+            if (difference != 1) {
+                isStep = false;
+                break;
+            }
+            previousDigit = currentDigit;
+            temp = parseInt(temp / 10);
+
+        }
+
+        if (isStep) {
+            alert(num + " is Step Number");
+        }
+        else {
+            alert(num + " is not a Step Number");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

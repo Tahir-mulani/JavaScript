@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Que 12 :
+Write a C program to calculate the sum of the squares of the digits of a given number using a while loop.
+The sum of the squares of the digits of n.
+Explanation: 1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14
+
+Input: 
+	Enter a number : 123
+Output: 
+	14
+*/
+    let num = parseInt(prompt("Enter Number"));
+    let sum=0;
+
+    while(num!=0){
+        let digit = num%10;
+        sum += digit*digit;
+        num = parseInt(num/10);
+    }
+    alert("Sum of Square of Digit is "+sum);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Que 13:
+-------
+Write a program to count how many times a specific digit  appears in a given number . 
+The program should use a while loop to iterate through the digits of the number and count how many times the specified digit appears.
+-> take two integer from the user first input is number and second input is which you want to search 
+->count the user given number how many times occurs in number.
+
+input :
+-------
+    Enter a number :123451
+    Enter a number want to search : 1
+output:
+    1 occurs 2 times.
+*/
+let num = parseInt(prompt("Enter Number :"));
+let searchNum = parseInt(prompt("Enter a number want to search :"));
+let count=0;
+let temp = num;
+while(temp >0){
+    let digit = temp%10;
+    if(digit == searchNum){
+        count++;
+    }
+    temp = parseInt(temp/10);
+}
+alert(searchNum+" Occurs "+count+" Times in "+num);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
