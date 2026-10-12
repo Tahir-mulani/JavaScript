@@ -1,7 +1,7 @@
 /*
 Que 4:
 -------
-Write a C program to print perfect numbers between 1 to N and count.
+Write a program to print perfect numbers between 1 to N and count.
 
 If a sum of the multiples of the number excluding the given number is same as the original number then we can say that number is a perfect number.
 
